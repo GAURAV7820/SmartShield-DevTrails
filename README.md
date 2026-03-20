@@ -122,6 +122,40 @@ To ensure fairness and prevent misuse, SmartShield enforces a minimum subscripti
 
 ---
 
+## 🛡️ Adversarial Defense & Anti-Spoofing Strategy
+
+With the rise of coordinated fraud attacks using GPS spoofing, SmartShield implements a multi-layered defense system to ensure only genuine claims are processed.
+
+### 1. Differentiation: Genuine Worker vs Spoofed Actor
+
+- Movement consistency checks (real routes vs static/jumps)  
+- Activity verification (delivery tasks, app usage)  
+- Sensor validation (accelerometer, speed patterns)  
+- Environmental correlation (actual weather vs claimed location)  
+
+### 2. Data Points Beyond GPS
+
+- Device fingerprinting (device ID, OS patterns)  
+- Network data (IP clustering, anomalies)  
+- Behavioral patterns (activity timing, claim frequency)  
+- Location history (sudden jumps, identical coordinates)  
+- Cluster detection (multiple users showing same behavior)  
+- External APIs (weather, traffic validation)  
+
+### 3. UX Balance for Genuine Workers
+
+- Soft flagging instead of instant rejection  
+- Trust score system for regular users  
+- Delayed verification for suspicious claims  
+- Alternative validation during network issues  
+- Manual review for extreme cases  
+
+### 🔒 Summary
+
+SmartShield combines behavioral intelligence, multi-source validation, and fraud clustering techniques to build a robust and fair anti-spoofing system.
+
+---
+
 ## ⚠️ Safety Suggestions
 
 - Heavy rain alerts  
@@ -141,7 +175,7 @@ To ensure fairness and prevent misuse, SmartShield enforces a minimum subscripti
 ## 🛠️ Tech Stack
 
 - Frontend: HTML, CSS, JavaScript  
-- Backend: Node.js (or planned architecture)  
+- Backend: Node.js (planned architecture)  
 - APIs: Weather API (for disruption detection)  
 
 ---
@@ -162,5 +196,3 @@ SmartShield combines real-time data, behavioral intelligence, and automated syst
 
 ## 🎥 Demo Video
 https://drive.google.com/file/d/1eOMNANMmSxW9fIqrktBnkjssEBN4MhOA/view?usp=sharing
-
----
