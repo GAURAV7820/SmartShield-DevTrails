@@ -43,7 +43,7 @@ Each worker is assigned a score between 0–100 based on:
 ## 💰 Weekly Premium Model
 
 $$
-Premium = Weekly\_Income \times Base\_Rate \times Risk\_Multiplier
+Premium = WeeklyIncome \times BaseRate \times RiskMultiplier
 $$
 
 Where:
@@ -58,13 +58,13 @@ Where:
 ## 📊 Loss Calculation
 
 $$
-Loss = Avg\_Hourly\_Income \times Inactive\_Hours
+Loss = AvgHourly Income \times InactiveHours
 $$
 
 Additionally:
 
 $$
-Adjusted\_Loss = (Normal\_Delivery\_Rate - Current\_Rate) \times Earnings\_Per\_Delivery
+Adjusted\_Loss = (NormalDeliveryRate - CurrentRate) \times EarningsPerDelivery
 $$
 
 ---
