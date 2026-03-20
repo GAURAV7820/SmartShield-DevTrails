@@ -140,7 +140,9 @@ To ensure fairness and prevent misuse, SmartShield enforces a minimum subscripti
 
 ## 🛠️ Tech Stack
 
-HTML, CSS, JavaScript, Node.js, Weather API  
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Node.js (or planned architecture)  
+- APIs: Weather API (for disruption detection)  
 
 ---
 
