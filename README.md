@@ -69,6 +69,18 @@ $$
 
 ---
 
+## Minimum Subscription Policy
+
+To ensure fairness and prevent misuse, GigShield enforces a minimum subscription period.
+
+- Workers must subscribe for at least 2–4 weeks.
+- Early cancellation is restricted or penalized.
+- This prevents users from enrolling only during high-risk periods (e.g., heavy rain forecasts).
+
+This helps maintain a stable risk pool and ensures sustainability of the system.
+
+---
+
 ## ⚙️ System Architecture Flow
 
 1. Worker registers
