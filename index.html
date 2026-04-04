@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayGuard | Worker Protection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="auth-shell" id="authShell">
+        <div class="auth-panel auth-brand">
+          <span class="eyebrow">Worker Protection</span>
+          <h2>Protection for delivery partners, built for real city conditions</h2>
+          <p class="hero-subtitle">
+            Check your weekly cover, see city risk conditions, and get instant
+            support when rain, pollution, curfew, or order demand drops affect
+            your earnings.
+          </p>
+          <div class="hero-pills">
+            <span>Weekly cover</span>
+            <span>Auto payout</span>
+            <span>City risk alerts</span>
+          </div>
+        </div>
+
+        <div class="auth-panel">
+          <div class="auth-tabs">
+            <button type="button" class="auth-tab active" id="showLogin">Login</button>
+            <button type="button" class="auth-tab" id="showSignup">Sign Up</button>
+          </div>
+
+          <div id="authMessage" class="auth-message"></div>
+
+          <form id="loginForm" class="auth-form">
+            <div class="form-group">
+              <label for="loginPhone">Phone Number</label>
+              <input id="loginPhone" type="text" value="9999999999" placeholder="Enter phone number" />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input id="loginPassword" type="password" placeholder="Enter password" />
+            </div>
+            <button type="submit" class="primary-btn">Continue</button>
+          </form>
+
+          <form id="signupForm" class="auth-form auth-hidden">
+            <div class="form-group">
+              <label for="signupName">Full Name</label>
+              <input id="signupName" type="text" value="Ravi" placeholder="Enter full name" />
+            </div>
+            <div class="form-group">
+              <label for="signupPhone">Phone Number</label>
+              <input id="signupPhone" type="text" value="9999999999" placeholder="Enter phone number" />
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <input id="signupPassword" type="password" placeholder="Create a password" />
+            </div>
+            <div class="form-group">
+              <label for="signupCity">City</label>
+              <select id="signupCity">
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Chennai</option>
+                <option>Kolkata</option>
+                <option>Pune</option>
+                <option>Ahmedabad</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="signupPlatform">Platform</label>
+              <select id="signupPlatform">
+                <option>Zomato</option>
+                <option>Swiggy</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="signupHours">Working Hours / Day</label>
+              <input id="signupHours" type="number" min="1" max="16" placeholder="Enter working hours" />
+            </div>
+            <button type="submit" class="primary-btn">Create account</button>
+          </form>
+        </div>
+      </section>
+
+      <div class="userbar auth-hidden" id="userbar">
+        <div>
+          <strong id="currentUserName">Guest</strong>
+          <span id="currentUserMeta">Not logged in</span>
+        </div>
+        <button type="button" class="secondary-btn" id="logoutButton">Logout</button>
+      </div>
+
+      <div id="appShell" class="auth-hidden">
+      <div class="app-topbar">
+        <div class="app-brand">
+          <div class="brand-mark">S</div>
+          <div>
+            <strong>PayGuard</strong>
+            <span>Worker protection for delivery partners</span>
+          </div>
+        </div>
+        <div class="app-nav">
+          <button type="button" class="nav-pill active" data-target="homeSection">Home</button>
+          <button type="button" class="nav-pill" data-target="coverSection">Cover</button>
+          <button type="button" class="nav-pill" data-target="claimsSection">Claims</button>
+          <button type="button" class="nav-pill" data-target="supportSection">Support</button>
+        </div>
+      </div>
+
+      <header class="hero hero-real" id="homeSection">
+        <div class="hero-copy hero-worker">
+          <span class="eyebrow">My Protection</span>
+          <h1>Stay covered when city conditions disrupt your shift</h1>
+          <p class="hero-subtitle">
+            Your weekly plan adjusts to the conditions in your city and releases
+            support automatically when disruption thresholds are hit.
+          </p>
+          <div class="hero-pills">
+            <span>Rain cover</span>
+            <span>Pollution cover</span>
+            <span>Auto claims</span>
+            <span>No paperwork</span>
+          </div>
+        </div>
+
+        <div class="hero-card hero-status">
+          <div class="status-kicker">This Week</div>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <span class="metric-label">Weekly premium</span>
+              <strong id="heroPremium">Rs. 0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Eligible payout</span>
+              <strong id="heroPayout">Rs. 0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Protection score</span>
+              <strong id="heroTrust">94</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Active alerts</span>
+              <strong id="heroTriggers">0 Active</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Protected workers</span>
+              <strong id="heroWorkers">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Claims paid</span>
+              <strong id="heroClaims">0</strong>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <section class="panel panel-form" id="coverSection">
+          <div class="panel-header">
+            <span class="panel-step">01</span>
+            <div>
+              <h2>Plan setup</h2>
+              <p>Update cover details and today’s operating conditions.</p>
+            </div>
+          </div>
+
+          <form id="payguardForm" class="form-layout">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" value="Ravi" required readonly />
+            </div>
+
+            <div class="form-group">
+              <label for="city">City</label>
+              <select id="city" name="city">
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Chennai</option>
+                <option>Kolkata</option>
+                <option>Pune</option>
+                <option>Ahmedabad</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="platform">Platform</label>
+              <input id="platform" name="platform" type="text" value="Zomato" readonly />
+            </div>
+
+            <div class="form-group">
+              <label for="workingHours">Working Hours / Day</label>
+              <input
+                id="workingHours"
+                name="workingHours"
+                type="number"
+                min="1"
+                max="16"
+                value="10"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="coverageType">Coverage Type</label>
+              <select id="coverageType" name="coverageType">
+                <option value="Rain">Rain</option>
+                <option value="Pollution">Pollution</option>
+                <option value="All" selected>All</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="plan">Plan</label>
+              <select id="plan" name="plan">
+                <option value="weekly" selected>
+                  Weekly plan
+                </option>
+                <option value="annual">
+                  Annual plan
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rainfall">Rainfall (mm)</label>
+              <input
+                id="rainfall"
+                name="rainfall"
+                type="range"
+                min="0"
+                max="500"
+                value="220"
+              />
+              <div class="range-value" id="rainfallValue">220 mm</div>
+            </div>
+
+            <div class="form-group">
+              <label for="aqi">AQI Level</label>
+              <input id="aqi" name="aqi" type="range" min="0" max="600" value="435" />
+              <div class="range-value" id="aqiValue">435</div>
+            </div>
+
+            <div class="form-group">
+              <label for="orderDrop">Order Drop (%)</label>
+              <input
+                id="orderDrop"
+                name="orderDrop"
+                type="range"
+                min="0"
+                max="100"
+                value="55"
+              />
+              <div class="range-value" id="orderDropValue">55%</div>
+            </div>
+
+            <div class="form-group">
+              <label for="curfew">Curfew Flag</label>
+              <select id="curfew" name="curfew">
+                <option value="false">No</option>
+                <option value="true" selected>Yes</option>
+              </select>
+            </div>
+
+            <div id="opsImpact" class="ops-impact">
+              Order demand and curfew pressure will change the risk score and may raise payout severity under eligible plans.
+            </div>
+
+            <div class="button-row">
+              <button type="submit" class="primary-btn">Save cover and check protection</button>
+              <button type="button" id="previewRun" class="secondary-btn">
+                Preview changes
+              </button>
+              <button type="button" id="weatherPreset" class="secondary-btn">
+                Fill city conditions
+              </button>
+              <button type="button" id="demoPreset" class="secondary-btn">
+                Load demo scenario
+              </button>
+            </div>
+
+            <div id="formActionStatus" class="form-action-status">
+              Your plan preview updates instantly as city conditions change.
+            </div>
+          </form>
+        </section>
+
+        <section class="panel panel-output">
+          <div class="panel-header">
+            <span class="panel-step">02</span>
+            <div>
+              <h2>Worker dashboard</h2>
+              <p>See cover status, disruption alerts, payout decision, and recent activity.</p>
+            </div>
+          </div>
+
+          <div class="summary-banner">
+            <div>
+              <span class="summary-label">Worker profile</span>
+              <strong id="summaryUser">Ravi | Mumbai | Zomato</strong>
+            </div>
+            <div>
+              <span class="summary-label">Active plan</span>
+              <strong id="summaryPolicy">All | Weekly PayGuard Plan</strong>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <article class="output-card premium-card">
+              <div class="card-topline">Weekly cover price</div>
+              <h3 id="premiumAmount">Rs. 213.72 / week</h3>
+              <ul class="detail-list" id="premiumDetails"></ul>
+            </article>
+
+            <article class="output-card">
+              <div class="card-topline">Plan details</div>
+              <div id="policyDetails" class="stacked-details"></div>
+            </article>
+          </div>
+
+          <article class="output-card trigger-block">
+            <div class="card-topline">City disruption alerts</div>
+            <div class="trigger-grid">
+              <div class="trigger-card" id="triggerRain"></div>
+              <div class="trigger-card" id="triggerAqi"></div>
+              <div class="trigger-card" id="triggerCurfew"></div>
+              <div class="trigger-card" id="triggerOrders"></div>
+            </div>
+          </article>
+
+          <div class="result-grid">
+            <article class="output-card">
+              <div class="card-topline">Verification checks</div>
+              <div id="fraudStatus" class="stacked-details"></div>
+            </article>
+
+            <article class="output-card claim-card" id="claimsSection">
+              <div class="card-topline">Claim wallet</div>
+              <div id="claimStatus" class="claim-status"></div>
+            </article>
+          </div>
+
+          <article class="output-card pitch-card">
+            <div class="card-topline">Protection summary</div>
+            <div class="pitch-grid">
+              <div>
+                <span class="summary-label">Protection score</span>
+                <strong id="trustScore">94 / 100</strong>
+              </div>
+              <div>
+                <span class="summary-label">Resilience score</span>
+                <strong id="resilienceScore">75 / 100</strong>
+              </div>
+              <div>
+                <span class="summary-label">Cover logic</span>
+                <strong id="judgeNarrative">
+                  AI pricing + trigger automation + fraud controls + instant payout
+                </strong>
+              </div>
+              <div>
+                <span class="summary-label">Operations scope</span>
+                <strong>
+                  Weather APIs, AQI feeds, geofencing, live order signals
+                </strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="output-card" id="supportSection">
+            <div class="card-topline">System status</div>
+            <div id="backendStatus" class="stacked-details"></div>
+          </article>
+
+          <article class="output-card">
+            <div class="card-topline">Cover record</div>
+            <div id="enrollmentStatus" class="stacked-details"></div>
+          </article>
+
+          <article class="output-card">
+            <div class="card-topline">Income protection profile</div>
+            <div id="protectionProfile" class="stacked-details"></div>
+          </article>
+
+          <article class="output-card">
+            <div class="card-topline">Operations snapshot</div>
+            <div class="portfolio-grid" id="portfolioStats"></div>
+          </article>
+
+          <div class="result-grid">
+            <article class="output-card">
+              <div class="card-topline">Recently protected workers</div>
+              <div id="recentWorkers" class="list-stack"></div>
+            </article>
+
+            <article class="output-card">
+              <div class="card-topline">Recent support payouts</div>
+              <div id="recentClaims" class="list-stack"></div>
+            </article>
+          </div>
+        </section>
+      </main>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
