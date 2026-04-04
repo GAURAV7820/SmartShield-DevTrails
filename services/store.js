@@ -1,8 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const dataDir = path.join(__dirname, "..", "data");
-const storePath = path.join(dataDir, "smartshield-store.json");
+const defaultDataDir = path.join(__dirname, "..", "data");
+const dataDir = process.env.PAYGUARD_DATA_DIR || process.env.RENDER_DISK_PATH || defaultDataDir;
+const storePath = path.join(dataDir, "payguard-store.json");
 
 function ensureStore() {
   if (!fs.existsSync(dataDir)) {

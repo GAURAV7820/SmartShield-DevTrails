@@ -1,6 +1,17 @@
 {
   "accounts": [
     {
+      "id": "acc_1775315428748_vx02rh",
+      "name": "Rohan",
+      "phone": "9596599788",
+      "password": "hellosir",
+      "city": "Mumbai",
+      "platform": "Zomato",
+      "workingHours": 5,
+      "createdAt": "2026-04-04T15:10:28.748Z",
+      "lastLoginAt": "2026-04-04T15:10:28.748Z"
+    },
+    {
       "id": "acc_1775314454634_15v0gg",
       "name": "Ravi1",
       "phone": "9999999994",
@@ -58,6 +69,16 @@
   ],
   "workers": [
     {
+      "id": "wrk_1775315438951_mdraue",
+      "name": "Rohan",
+      "city": "Mumbai",
+      "platform": "Zomato",
+      "workingHours": 7,
+      "pastClaimsCount": 1,
+      "createdAt": "2026-04-04T15:10:38.951Z",
+      "lastSeenAt": "2026-04-04T15:11:03.717Z"
+    },
+    {
       "id": "wrk_1775314607501_t08ztx",
       "name": "Ravi1",
       "city": "Mumbai",
@@ -109,6 +130,24 @@
     }
   ],
   "policies": [
+    {
+      "id": "pol_1775315463718_chig1q",
+      "workerId": "wrk_1775315438951_mdraue",
+      "coverageType": "All",
+      "plan": "Weekly PayGuard Plan",
+      "weeklyBasePremium": 109,
+      "status": "ACTIVE",
+      "createdAt": "2026-04-04T15:11:03.718Z"
+    },
+    {
+      "id": "pol_1775315438952_7qn8d1",
+      "workerId": "wrk_1775315438951_mdraue",
+      "coverageType": "All",
+      "plan": "Weekly PayGuard Plan",
+      "weeklyBasePremium": 109,
+      "status": "ACTIVE",
+      "createdAt": "2026-04-04T15:10:38.952Z"
+    },
     {
       "id": "pol_1775314607502_1nslka",
       "workerId": "wrk_1775314607501_t08ztx",
@@ -282,6 +321,30 @@
     }
   ],
   "simulations": [
+    {
+      "id": "sim_1775315463718_xguhrb",
+      "workerId": "wrk_1775315438951_mdraue",
+      "policyId": "pol_1775315463718_chig1q",
+      "city": "Mumbai",
+      "platform": "Zomato",
+      "premium": 214.44,
+      "activeTriggerCount": 4,
+      "trustScore": 72,
+      "claimApproved": false,
+      "createdAt": "2026-04-04T15:11:03.718Z"
+    },
+    {
+      "id": "sim_1775315438952_yy2z8k",
+      "workerId": "wrk_1775315438951_mdraue",
+      "policyId": "pol_1775315438952_7qn8d1",
+      "city": "Mumbai",
+      "platform": "Zomato",
+      "premium": 205.82,
+      "activeTriggerCount": 4,
+      "trustScore": 94,
+      "claimApproved": true,
+      "createdAt": "2026-04-04T15:10:38.952Z"
+    },
     {
       "id": "sim_1775314607502_jnhclv",
       "workerId": "wrk_1775314607501_t08ztx",
@@ -512,6 +575,43 @@
     }
   ],
   "claims": [
+    {
+      "id": "clm_1775315463719_dtu9vj",
+      "workerId": "wrk_1775315438951_mdraue",
+      "policyId": "pol_1775315463718_chig1q",
+      "simulationId": "sim_1775315463718_xguhrb",
+      "workerName": "Rohan",
+      "city": "Mumbai",
+      "platform": "Zomato",
+      "status": "BLOCKED",
+      "payout": 0,
+      "severity": "Blocked",
+      "reasons": [
+        "Fraud risk detected"
+      ],
+      "premium": 214.44,
+      "createdAt": "2026-04-04T15:11:03.719Z"
+    },
+    {
+      "id": "clm_1775315438953_aigap6",
+      "workerId": "wrk_1775315438951_mdraue",
+      "policyId": "pol_1775315438952_7qn8d1",
+      "simulationId": "sim_1775315438952_yy2z8k",
+      "workerName": "Rohan",
+      "city": "Mumbai",
+      "platform": "Zomato",
+      "status": "APPROVED",
+      "payout": 700,
+      "severity": "High",
+      "reasons": [
+        "Heavy rainfall disruption",
+        "Hazardous AQI disruption",
+        "Curfew restriction",
+        "Significant order demand drop"
+      ],
+      "premium": 205.82,
+      "createdAt": "2026-04-04T15:10:38.953Z"
+    },
     {
       "id": "clm_1775314607503_9q1a0e",
       "workerId": "wrk_1775314607501_t08ztx",

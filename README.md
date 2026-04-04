@@ -171,6 +171,28 @@ Visit:
 open index.html
 ```
 
+## Deploy On Render
+
+PayGuard is ready to deploy on Render as a Node web service.
+
+1. Push this project to GitHub.
+2. In Render, create a new `Web Service` from the repo.
+3. Use:
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+4. Add a persistent disk:
+   - Mount Path: `/var/data`
+   - Size: `1 GB`
+5. Add this environment variable:
+   - `PAYGUARD_DATA_DIR=/var/data/payguard`
+
+Why this matters:
+
+- PayGuard stores accounts, workers, policies, and claims in a local JSON file.
+- The persistent disk keeps that data after restarts and redeploys.
+
+You can also deploy with the included [render.yaml](/Users/archa/SmartShield/render.yaml).
+
 ---
 
 ## 📁 Project Structure
